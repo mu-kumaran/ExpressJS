@@ -1,7 +1,7 @@
 var exp = require("express");
 var app = exp();
  
-app.get("mfun",(req,res)=>{
+app.get("/mfun",(req,res)=>{
     var user = req.query["un"]
     var pass = req.query["pw"]
     res.send(user+" "+pass)
