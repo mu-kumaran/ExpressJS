@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #s1,#s2,#s3
+        {
+            display: none;
+        }
+    </style>
+
+<script type="text/javascript">
+    function dis(){
+        var rno = document.getElementById("roll").checked;
+        var rname = document.getElementById("sname").checked;
+        var rmark = document.getElementById("mark").checked;
+
+        if(rno){
+            
+            document.getElementById("s1").style.display = "block";
+            document.getElementById("s2").style.display = "none";
+            document.getElementById("s3").style.display = "none";
+        }
+        if(rname){
+          
+            document.getElementById("s2").style.display = "block";
+            document.getElementById("s1").style.display = "none";
+            document.getElementById("s3").style.display = "none";
+        }
+        if(rmark){
+            
+            document.getElementById("s3").style.display = "block";
+            document.getElementById("s1").style.display = "none";
+            document.getElementById("s2").style.display = "none";
+        }
+    }
+
+</script>
+    
+</head>
+<body>
+    <h1><u>Find student profile</u></h1>
+    <form action="http://127.0.0.1:1234/findstud" method="get"></form>
+    <h3>Search by,</h3>
+    <input type="radio" id="roll" onclick="dis()" name="stud">Roll no
+    <input type="radio" id="sname" onclick="dis()" name="stud">Student name
+    <input type="radio" id="mark" onclick="dis()" name="stud">Mark
+    <br><br>
+    <div id="s1">
+        Roll no:<input type="text" name="roll" placeholder="Enter student roll no">
+    </div>
+    <div id="s2">
+        Student name:<input type="text" name="sname" placeholder="Enter student name">
+    </div>
+    <div id="s3">
+        Mark:<input type="text" name="mark" placeholder="Enter student mark">
+    </div><br>
+    <input type="submit" value="Find">
+
+</body>
+</html>
