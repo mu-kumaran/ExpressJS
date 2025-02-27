@@ -10,23 +10,44 @@ console.log("connection successful")
 
 // find operation
 
-app.get("/findfun",(req,res)=>{
-    var rl = req.query["roll"]
-    var stud_name = req.query["sname"]
-    var input = { 
-        rollno: parseInt(rl),
-        sname: stud_name
+app.get("/findstud",(req,res)=>{
+    var s1 = req.query["roll"]
+    var s2 = req.query["sname"]
+    var s3 = req.query["mark"]
+    console.log(s1)
+    console.log(s2)
+    console.log(s3)
+    console.log(s1.length)
+    console.log(s2.length)
+    console.log(s3.length)
+    
+    if(s1.length>0){
+        var input = {
+            rollno:parseInt(s1)
+        }
+    }
+    else if(s2.length>0){
+        var input = {
+            sname:s2
+        }
+    }
+    else{
+        var input = {
+            mark:parseInt(s3)
+        }
     }
     console.log(input)
-    var dataset = client.db("manoj").collection("myStudent").find(input).toArray()
+    var dataset = client.db("manoj").collection("student").find(input).toArray()
     try{
         dataset.then((result)=>{
             console.log(result)
             console.log(result.length)
-            if (result.length>0)
+            if (result.length>0){
                 res.send(result)
-            else
+            }
+            else{
                 res.send("Record not found")
+            }
         })
     }
     catch{
