@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web socket</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        function myfun(){
+            var socket = io();
+            var email = document.getElementById("e1").value;
+            var msg = document.getElementById("m1").value;
+            socket.emit("manojevent",{
+                semail: email,
+                smsg: msg
+            })
+        }
+    </script>
+</head>
+<body>
+    <h1>Web socket - Sending message to server</h1>
+    Email: <input type="email" placeholder="Enter email" id="e1"><br><br>
+    Messsage: <input type="text" placeholder="Enter message" id="m1"><br><br>
+    <input type="button" onclick="myfun()" value="Send msg to server">
+</body>
+</html>
