@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            width: 70%;
+            height: 55vw;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 5px solid green;
+            text-align: center;
+        }
+        #container{
+            margin-top: 50px;
+        }
+        #user1,#user2,#user3{
+            background-color: rgb(43, 189, 226);
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 30px;
+            padding: 15px;
+            width: 150px;
+            font-weight: bold;
+            box-shadow: 5px 5px 5px 2px grey;
+        }
+
+        #user1:hover{
+            cursor: pointer;
+            background-color: blue
+        }
+        #user2:hover{
+            cursor: pointer;
+            background-color: blue
+        }
+        #user3:hover{
+            cursor: pointer;
+            background-color: blue
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Multiport access in Express and NodeJS</h1>
+    <div id="container">
+        <form action="http://127.0.0.1:1234/user1" method="get">
+            <input type="submit" value="user1" id="user1">
+        </form><br>
+        <form action="http://127.0.0.1:1235/user2" method="get">
+            <input type="submit" value="user2" id="user2">
+        </form><br>
+        <form action="http://127.0.0.1:1236/user3" method="get">
+            <input type="submit" value="user3" id="user3">
+        </form><br>
+    </div>  
+</body>
+</html>

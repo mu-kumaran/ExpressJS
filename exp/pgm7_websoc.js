@@ -1,6 +1,6 @@
 const app = require("express")()
 const socketio = require("socket.io")
-const http =require("http")
+const http = require("http")
 
 const port = process.env.PORT||1234
 const server = http.createServer(app)
